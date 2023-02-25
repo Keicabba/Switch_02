@@ -14,17 +14,23 @@ public class Start {
             System.out.print("Please enter a string: ");
             String input = scanner.nextLine();
 
-            if (input.equals("size")) {
-                System.out.println("The size of the list is: " + list.size());
-            } else if (input.equals("clear")) {
-                list.clear();
-                System.out.println("The list has been cleared.");
-            } else if (input.equals("print")) {
-                System.out.println(list);
-            } else if (input.equals("exit")) {
-                shouldContinue = false;
-            } else {
-                list.add(input);
+            switch (input) {
+                case "size":
+                    System.out.println("The size of the list is: " + list.size());
+                    break;
+                case "clear":
+                    list.clear();
+                    System.out.println("The list has been cleared.");
+                    break;
+                case "print":
+                    System.out.println(list);
+                    break;
+                case "exit":
+                    shouldContinue = false;
+                    break;
+                default:
+                    list.add(input);
+                    break;
             }
         }
         System.out.println("Exiting");
